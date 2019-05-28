@@ -12,4 +12,6 @@
     <string name="email">Email</string>
     <string name="empty_field">Please fill this field</string>
     <string name="circle_list">Circle List</string>
+    <string name="circle_list_friend">Your Circle List\'s Friends:</string>
+    <string name="member_circle_list">You are a member of these circle list:</string>
 </resources>
