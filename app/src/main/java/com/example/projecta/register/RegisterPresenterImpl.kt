@@ -1,7 +1,6 @@
-package com.example.projecta.Register
+package com.example.projecta.register
 
 import android.util.Patterns
-import java.util.regex.Pattern
 
 class RegisterPresenterImpl(var view:RegisterContracts.view): RegisterContracts.presenter {
     override fun validateFields() {

@@ -1,4 +1,4 @@
-package com.example.projecta.Register
+package com.example.projecta.register
 
 interface RegisterContracts {
 

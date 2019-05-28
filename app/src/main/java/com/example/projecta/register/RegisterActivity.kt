@@ -1,4 +1,4 @@
-package com.example.projecta.Register
+package com.example.projecta.register
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

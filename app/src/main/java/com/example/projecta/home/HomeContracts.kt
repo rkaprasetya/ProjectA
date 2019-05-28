@@ -1,4 +1,4 @@
-package com.example.projecta.Home
+package com.example.projecta.home
 
 interface HomeContracts {
     interface presenter{

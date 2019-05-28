@@ -5,14 +5,14 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Home.HomeActivity">
+        tools:context=".home.HomeActivity">
 
     <LinearLayout android:layout_width="0dp"
                   android:layout_height="50dp"
                   android:orientation="horizontal" app:layout_constraintBottom_toBottomOf="parent"
                   android:layout_marginEnd="1dp" app:layout_constraintEnd_toEndOf="parent"
                   app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="326dp"
-                  app:layout_constraintTop_toBottomOf="@+id/btn_register">
+                  app:layout_constraintTop_toBottomOf="@+id/btn_register" android:id="@+id/linearLayout">
         <LinearLayout android:layout_width="0dp"
                       android:layout_height="match_parent"
                       android:gravity="center"
@@ -30,6 +30,8 @@
         <LinearLayout android:layout_width="0dp"
                       android:layout_height="match_parent"
                       android:gravity="center"
+                      android:clickable="true"
+                      android:focusable="true"
                       android:id="@+id/btn_circle"
                       android:layout_weight="1">
 
@@ -72,6 +74,7 @@
     </LinearLayout>
     <Button
             android:text="@string/help"
+            android:elevation="5dp"
             android:layout_width="292dp"
             android:layout_height="308dp"
             android:background="@drawable/bg_round_red"
@@ -82,5 +85,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="162dp"
-            tools:layout_editor_absoluteY="187dp" app:layout_constraintHorizontal_bias="0.502"/>
+            app:layout_constraintHorizontal_bias="0.502" android:layout_marginTop="269dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="219dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"/>
 </android.support.constraint.ConstraintLayout>
