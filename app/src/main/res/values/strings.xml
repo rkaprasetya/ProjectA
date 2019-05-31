@@ -14,4 +14,13 @@
     <string name="circle_list">Circle List</string>
     <string name="circle_list_friend">Your Circle List\'s Friends:</string>
     <string name="member_circle_list">You are a member of these circle list:</string>
+    <string name="my_profile">My Profile</string>
+    <string name="dummy_phone">+6281172841</string>
+    <string name="dummy_name">John Doe</string>
+    <string name="dummy_email">rka.pras@yahoo.com</string>
+    <string name="edit">Edit</string>
+    <string name="logout_yes">Yes, I am sure</string>
+    <string name="logout_question">Are you sure you want to log out?</string>
+    <string name="logout_confirmation">Logout Confirmation</string>
+    <string name="logout_no">No, I change my mind</string>
 </resources>

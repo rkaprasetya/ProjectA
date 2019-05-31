@@ -1,15 +1,15 @@
-package com.example.projecta.circle
+package com.example.projecta.profile
 
 import com.example.projecta.base.BaseContracts
 
-interface CircleContracts {
+interface ProfileContracts {
     interface view: BaseContracts.view{
-
-    }
-    interface presenter{
-
+        
     }
     interface repository{
-
+        
+    }
+    interface presenter {
+        
     }
 }
