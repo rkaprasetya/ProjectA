@@ -23,4 +23,8 @@
     <string name="logout_question">Are you sure you want to log out?</string>
     <string name="logout_confirmation">Logout Confirmation</string>
     <string name="logout_no">No, I change my mind</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="permission_rationale">Location permission is needed to run the feature</string>
+    <string name="permission_denied_explanation">Permission is required to use this feature</string>
+    <string name="settings">settings</string>
 </resources>

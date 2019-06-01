@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.example.projecta.R
 import com.example.projecta.circle.CircleActivity
+import com.example.projecta.map.MapsActivity
 import com.example.projecta.profile.ProfileActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.dialog_logout.view.*
@@ -24,8 +25,7 @@ class HomeActivity : AppCompatActivity(), HomeContracts.view, View.OnClickListen
 
         when (v!!.id) {
             R.id.btn_circle -> openCircleActivity()
-            R.id.btn_help -> {
-            }
+            R.id.btn_help -> sendHelp()
             R.id.btn_logout -> openLogoutDialog()
             R.id.tv_logout_no -> dialog.dismiss()
             R.id.tv_logout_yes -> dialog.dismiss()
@@ -53,7 +53,8 @@ class HomeActivity : AppCompatActivity(), HomeContracts.view, View.OnClickListen
     }
 
     private fun sendHelp() {
-
+        val intent = Intent(this, MapsActivity::class.java)
+        startActivity(intent)
     }
 
     override fun openLogoutDialog() {
