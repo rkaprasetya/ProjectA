@@ -23,3 +23,5 @@ Details of the application engine:
 
 #screenshot
 ![alt text](https://github.com/rkaprasetya/ProjectA/blob/master/Screenshot_20190603-141236.jpg)
+![alt text](https://github.com/rkaprasetya/ProjectA/blob/master/Screenshot_20190603-141307.jpg)
+![alt text](https://github.com/rkaprasetya/ProjectA/blob/master/Screenshot_20190603-141324.jpg)
