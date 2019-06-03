@@ -1,4 +1,4 @@
-# ProjectA
+#ProjectA
 
 Project A an application that help user who is in emergency situation. 
 With a press of a button, the application will send a distress signal to friends. 
@@ -9,7 +9,8 @@ Details of the application engine:
 - Language programm : Kotlin
 - Framework : MVP
 - Min SDK Version : Lollipop(21)
-#CurrentDevelopment 
+
+#CurrentDevelopment (3/6/2019)
 - FrontEnd side :
   - Home, Circle, Profile and Settings page
   - GoogleMap Integration
@@ -17,5 +18,5 @@ Details of the application engine:
 #UpcomingDevelopment
 - FrontEnd Side:
   - Login and Registration page
-- BackEnd Side:
-  tba
+- BackEnd Side:tba 
+- Database: tba
