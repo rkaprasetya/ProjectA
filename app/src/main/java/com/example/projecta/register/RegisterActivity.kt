@@ -1,8 +1,8 @@
 package com.example.projecta.register
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.example.projecta.R
 import kotlinx.android.synthetic.main.activity_register.*
 

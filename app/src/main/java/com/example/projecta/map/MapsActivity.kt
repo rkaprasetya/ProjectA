@@ -1,7 +1,6 @@
 package com.example.projecta.map
 
 import android.annotation.SuppressLint
-import android.app.ActionBar
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -9,10 +8,10 @@ import android.location.Location
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.projecta.BuildConfig
 import com.example.projecta.R
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -21,6 +20,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
@@ -32,7 +32,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, MapsContract.view 
     protected var lastLocation: Location? = null
     private var latitudeLabel: Any? = null
     private var longitudeLabel: Any? = null
-    private var presenter :MapsPresenterImpl? = MapsPresenterImpl(this)
+    private var presenter: MapsPresenterImpl? = MapsPresenterImpl(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
@@ -59,12 +59,24 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, MapsContract.view 
 
                 //Add a marker in Sydney and move the camera
                 val currentLocation = LatLng(lastLocation!!.latitude, lastLocation!!.longitude)
-                val sydney = LatLng(-34.0, 151.0)
-                mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-                mMap.addMarker(MarkerOptions().position(currentLocation).title("Your current location"))
-                mMap.moveCamera(CameraUpdateFactory.newLatLng(currentLocation))
+                val sydney = LatLng(-6.914744, 107.609810)
+                val zoomLevel = 8.0f
+                mMap.addMarker(
+                    MarkerOptions().position(sydney)
+                        .title("Person in distress")
+                        .snippet("Rick, +6287762533")
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                )
+
+                mMap.addMarker(
+                    MarkerOptions().position(currentLocation)
+                        .title("Your current location")
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                )
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, zoomLevel))
+                mMap.setInfoWindowAdapter(PopupAdapter(layoutInflater))
             } else {
-                Toast.makeText(this, "No locaiton detected", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "No location detected", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -96,6 +108,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, MapsContract.view 
         presenter!!.onDestroy()
         presenter = null
     }
+
     override fun showSnackBar(textStringId: Int, actionStringId: Int, listener: View.OnClickListener) {
         Toast.makeText(this, getString(textStringId), Toast.LENGTH_LONG).show()
     }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="settings_item_textsize">12sp</dimen>
+    <dimen name="settings_item_margintopbottom">8dp</dimen>
+    <dimen name="settings_item_marginstart">20dp</dimen>
+
+    <dimen name="page_title_textsize">20sp</dimen>
+</resources>

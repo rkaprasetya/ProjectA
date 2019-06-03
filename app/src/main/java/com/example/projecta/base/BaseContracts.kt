@@ -4,7 +4,7 @@ import android.app.AlertDialog
 
 interface BaseContracts {
     interface view{
-        fun openLogoutDialog()
+        fun openSettingsActivity()
         var dialog:AlertDialog
     }
     interface presenter{

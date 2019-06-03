@@ -2,9 +2,9 @@ package com.example.projecta.map
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.support.v4.app.ActivityCompat
 import android.util.Log
 import android.view.View
+import androidx.core.app.ActivityCompat
 import com.example.projecta.R
 
 class MapsPresenterImpl(var view:MapsContract.view?):MapsContract.presenter {
