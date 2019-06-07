@@ -25,6 +25,13 @@
             android:theme="@style/AppTheme">
         <activity android:name=".settings.SettingsActivity">
         </activity>
+        <service android:name=".firebase.firebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+
+        </service>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

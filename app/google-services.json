@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "698337113273",
+    "firebase_url": "https://nodal-alloy-242402.firebaseio.com",
+    "project_id": "nodal-alloy-242402",
+    "storage_bucket": "nodal-alloy-242402.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698337113273:android:e7be219bc9e0cb09",
+        "android_client_info": {
+          "package_name": "com.example.projecta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698337113273-fa92q22h2immkgfsdsmqu24pehli7vb4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.projecta",
+            "certificate_hash": "45373931631912a3785ac2f73ddd93045e4ee353"
+          }
+        },
+        {
+          "client_id": "698337113273-1lmglr6n3d57f89p139tsc3rj2vcs5sb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrizjqm6I1A9sj7fpKindBTWmWqMqHTOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698337113273-1lmglr6n3d57f89p139tsc3rj2vcs5sb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
