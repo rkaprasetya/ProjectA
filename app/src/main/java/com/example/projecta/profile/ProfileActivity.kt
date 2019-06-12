@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.dialog_logout.view.*
 class ProfileActivity : AppCompatActivity(), View.OnClickListener,
     ProfileContracts.view {
 
-    override lateinit var dialog: AlertDialog
+    lateinit var dialog: AlertDialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -34,7 +34,7 @@ class ProfileActivity : AppCompatActivity(), View.OnClickListener,
         }
     }
 
-    override fun openSettingsActivity() {
+    fun openSettingsActivity() {
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)

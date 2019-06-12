@@ -3,23 +3,55 @@ package com.example.projecta.register
 import android.util.Patterns
 
 class RegisterPresenterImpl(var view:RegisterContracts.view): RegisterContracts.presenter {
+
+    var result = true;
+    override fun isEmailValid() {
+
+        if(view.getEmail().isEmpty()){
+            view.setEmailError( "Please fill this field")
+            result = false
+        }else if(!view.getEmail().isValidEmail()){
+            view.setEmailError("Email address is invalid")
+            result = false
+        }
+    }
+
     override fun validateFields() {
-        var result = true;
+        result = true
 
         if(view.getFullName() == ""){
             view.setFullNameError()
             result = false
         }
-        if(view.getEmail() == ""){
-            view.setEmailError()
-            result = false
-        }
+        isEmailValid()
         if(view.getPhoneNumber() == ""){
             view.setPhoneNumberError()
             result = false
         }
-        if(result){
 
+        isPasswordValid()
+
+        if(result){
+            view.showToast()
+        }
+    }
+    override fun isPasswordValid() {
+
+        val password = view.getPassword()
+        val retype = view.getRetypePassword()
+        if(password.isEmpty()){
+            view.setPasswordError("Please fill this field")
+            result = false
+        }else if(retype.isEmpty()){
+            view.setRetypeError("Please fill this field")
+            result = false
+        }else if(password != retype){
+            view.setPasswordError("Password does not match")
+            view.setRetypeError("Password does not match")
+            result = false
+        }else{
+            view.unsetPasswordError()
+            view.unsetRetypeError()
         }
     }
 

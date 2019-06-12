@@ -30,4 +30,10 @@
     <string name="profile_picture">Profile Picture</string>
     <string name="alarm_sound">Alarm Sound</string>
     <string name="switch_button">Switch</string>
+    <string name="sender_id">id_1</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="email_address">Email address</string>
+    <string name="register_here">Don\'t have an account yet? Register here</string>
+    <string name="retype_password">Retype Password</string>
 </resources>

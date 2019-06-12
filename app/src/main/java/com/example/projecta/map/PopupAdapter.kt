@@ -18,11 +18,11 @@ class PopupAdapter(var inflater: LayoutInflater) : GoogleMap.InfoWindowAdapter {
     override fun getInfoContents(marker: Marker?): View {
         popup = inflater.inflate(R.layout.popup_map, null)
         if (marker!!.snippet != null) {
-            popup.tv_popup_name.text = marker!!.snippet.toString()
+            popup.tv_popup_name.text = marker.snippet.toString()
             popup.ll_popup_name.visibility = View.VISIBLE
         }
 
-        popup.tv_popup_title.text = marker!!.title.toString()
+        popup.tv_popup_title.text = marker.title.toString()
         return popup
     }
 }

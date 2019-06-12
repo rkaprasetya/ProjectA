@@ -23,15 +23,23 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".login.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".firebase.FirebasePushNotificationActivity">
+        </activity>
         <activity android:name=".settings.SettingsActivity">
         </activity>
+
         <service android:name=".firebase.firebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
-
         </service>
-
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -53,13 +61,10 @@
         <activity android:name=".circle.CircleActivity">
         </activity>
         <activity android:name=".register.RegisterActivity">
+
         </activity>
         <activity android:name=".home.HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>

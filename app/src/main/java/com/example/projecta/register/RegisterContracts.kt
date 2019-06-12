@@ -7,13 +7,23 @@ interface RegisterContracts {
         fun getPhoneNumber():String
         fun getEmail():String
         fun setPhoneNumberError()
-        fun setEmailError()
+        fun setEmailError(message:String)
         fun setFullNameError()
-        fun keyUpEmail()
+        fun setPasswordError(message:String)
+        fun setRetypeError(message:String)
+        fun showToast()
+        fun getPassword():String
+        fun getRetypePassword():String
+        fun unsetPasswordError()
+        fun unsetRetypeError()
+
     }
     interface presenter{
         fun validateFields()
         fun String.isValidEmail():Boolean
+        fun isEmailValid()
+        fun isPasswordValid()
+
     }
     interface repository{
 

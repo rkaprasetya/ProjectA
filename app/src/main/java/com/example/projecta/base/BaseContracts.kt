@@ -1,11 +1,12 @@
 package com.example.projecta.base
 
 import android.app.AlertDialog
+import android.view.View
 
 interface BaseContracts {
     interface view{
-        fun openSettingsActivity()
-        var dialog:AlertDialog
+
+
     }
     interface presenter{
 

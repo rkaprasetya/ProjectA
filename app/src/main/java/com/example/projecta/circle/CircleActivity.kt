@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_circle.*
 
 class CircleActivity : AppCompatActivity(), CircleContracts.view,
     View.OnClickListener {
-    override lateinit var dialog: AlertDialog
+    lateinit var dialog: AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +49,7 @@ class CircleActivity : AppCompatActivity(), CircleContracts.view,
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
     }
 
-    override fun openSettingsActivity() {
+     fun openSettingsActivity() {
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
