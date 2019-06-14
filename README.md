@@ -9,8 +9,10 @@ Details of the application engine:
 - Language programm : Kotlin
 - Framework : MVP
 - Min SDK Version : Lollipop(21)
+#CurrentDevelopment(14/6/2019)
+  - integrate registration to firebase realtime database
 
-#CurrentDevelopment (12/6/2019)
+#PreviousDevelopment (12/6/2019)
   - Create Firebase Realtime Database and integration
   - Add login and Register screen
 
