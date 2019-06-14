@@ -10,14 +10,14 @@ Details of the application engine:
 - Framework : MVP
 - Min SDK Version : Lollipop(21)
 
-#CurrentDevelopment (6/7/2019)
+#CurrentDevelopment (12/6/2019)
+  - Create Firebase Realtime Database and integration
+  - Add login and Register screen
+
+#PreviousDevelopment (7/6/2019)
   - Firebase Cloud Messaging Integration
   - Creating Firebase Push Notification
-
-#UpcomingDevelopment
-- BackEnd Side:tba 
-- Database: tba
-
+  
 #PreviousDevelopment (3/6/2019)
 - FrontEnd side :
   - Home, Circle, Profile and Settings page
