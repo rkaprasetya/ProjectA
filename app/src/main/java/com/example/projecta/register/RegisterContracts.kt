@@ -11,7 +11,7 @@ interface RegisterContracts {
         fun setFullNameError()
         fun setPasswordError(message:String)
         fun setRetypeError(message:String)
-        fun showToast()
+        fun showToast(message:String)
         fun getPassword():String
         fun getRetypePassword():String
         fun unsetPasswordError()
@@ -23,9 +23,10 @@ interface RegisterContracts {
         fun String.isValidEmail():Boolean
         fun isEmailValid()
         fun isPasswordValid()
-
     }
     interface repository{
+        fun registerUser(fullname : String, phoneNumber: String, email: String, password:String)
+        fun createUser(fullname: String, phoneNumber: String, email: String, password: String)
 
     }
 }

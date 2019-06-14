@@ -1,9 +1,11 @@
 package com.example.projecta.register
 
+import android.util.Log
 import android.util.Patterns
+import com.example.projecta.firebase.authentication.FirebaseAuthenticationManager
 
-class RegisterPresenterImpl(var view:RegisterContracts.view): RegisterContracts.presenter {
-
+class RegisterPresenterImpl(var view:RegisterContracts.view, var repository: RegisterContracts.repository): RegisterContracts.presenter {
+    private val authentication: FirebaseAuthenticationManager = FirebaseAuthenticationManager()
     var result = true;
     override fun isEmailValid() {
 
@@ -17,24 +19,45 @@ class RegisterPresenterImpl(var view:RegisterContracts.view): RegisterContracts.
     }
 
     override fun validateFields() {
+        var registerResult = false
         result = true
-
-        if(view.getFullName() == ""){
+        val fullname = view.getFullName()
+        val phoneNumber = view.getPhoneNumber()
+        val password = view.getPassword()
+        val email = view.getEmail()
+        if(fullname == ""){
             view.setFullNameError()
             result = false
         }
         isEmailValid()
-        if(view.getPhoneNumber() == ""){
+        if(phoneNumber == ""){
             view.setPhoneNumberError()
             result = false
         }
 
         isPasswordValid()
-
         if(result){
-            view.showToast()
+//            authentication.register(email,password,fullname,phoneNumber) { isSuccessful ->
+//                onRegisterResult(isSuccessful,fullname,phoneNumber,email,password)
+//            }
+             repository.registerUser(fullname,phoneNumber,email,password)
+
+        }else{
+            view.showToast("Form belum terisi dengan benar")
         }
+
+
     }
+    fun onRegisterResult(userResult: Boolean,fullname: String, phoneNumber: String, email: String, password: String) {
+        if(userResult){
+            repository.createUser(fullname,phoneNumber,email,password)
+        }else{
+            view.showToast("Email telah terdaftar")
+        }
+
+    }
+
+
     override fun isPasswordValid() {
 
         val password = view.getPassword()
@@ -56,6 +79,8 @@ class RegisterPresenterImpl(var view:RegisterContracts.view): RegisterContracts.
     }
 
     override fun String.isValidEmail():Boolean = this.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(this).matches()
+
+
 
 
 }

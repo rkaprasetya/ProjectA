@@ -9,8 +9,8 @@ import com.example.projecta.utilities.onTextChanged
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity(), RegisterContracts.view, View.OnClickListener {
-
-    private var presenter : RegisterPresenterImpl = RegisterPresenterImpl(this)
+    private var repository = RegisterRepositoryImpl()
+    private var presenter : RegisterPresenterImpl = RegisterPresenterImpl(this,repository)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -29,8 +29,8 @@ class RegisterActivity : AppCompatActivity(), RegisterContracts.view, View.OnCli
             R.id.btn_register->presenter.validateFields()
         }
     }
-    override fun showToast() {
-        Toast.makeText(this,"Semua benar",Toast.LENGTH_SHORT).show()
+    override fun showToast(message:String) {
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
     }
 
 
