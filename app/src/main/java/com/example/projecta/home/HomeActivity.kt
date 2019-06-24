@@ -17,6 +17,8 @@ import kotlinx.android.synthetic.main.activity_home.*
 import java.io.IOException
 
 class HomeActivity : AppCompatActivity(), HomeContracts.view, View.OnClickListener {
+
+
     private var presenter : HomePresenterImpl = HomePresenterImpl(this)
     lateinit var dialog: AlertDialog
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,6 +81,12 @@ class HomeActivity : AppCompatActivity(), HomeContracts.view, View.OnClickListen
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+
+    }
+
+    override fun openMapActivity() {
+        val intent = Intent(this, MapsActivity::class.java)
+        startActivity(intent)
 
     }
 

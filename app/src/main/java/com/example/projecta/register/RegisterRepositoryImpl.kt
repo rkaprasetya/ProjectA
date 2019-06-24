@@ -1,6 +1,5 @@
 package com.example.projecta.register
 
-import android.util.Log
 import com.example.projecta.firebase.authentication.FirebaseAuthenticationManager
 import com.example.projecta.firebase.database.FirebaseDatabaseManager
 
@@ -15,7 +14,7 @@ class RegisterRepositoryImpl: RegisterContracts.repository {
         phoneNumber: String,
         email: String,
         password: String) {
-        Log.e("register","register=$email fullname=$fullname")
+
         authentication.register(email,password,fullname,phoneNumber) { isSuccessful ->
             onRegisterResult(isSuccessful,fullname,phoneNumber,email,password)
 
@@ -34,8 +33,9 @@ class RegisterRepositoryImpl: RegisterContracts.repository {
 
     }
 
-    override fun createUser(fullname: String, phoneNumber: String, email: String, password: String) {
+    override fun createUser(fullname: String, phoneNumber: String, email: String, password: String):Boolean {
         val id = authentication.getUserId()
-        db.createUser(id,fullname,phoneNumber, email,password)
+        return db.createUser(id,fullname,email, phoneNumber,password)
+
     }
 }

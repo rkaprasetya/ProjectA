@@ -25,4 +25,19 @@ class FirebaseAuthenticationManager : FirebaseAuthenticationInterface {
         }
     }
 
+    override fun logout() {
+        authentication.signOut()
+    }
+    override fun getUserSession():Boolean {
+        val currentUser = authentication.currentUser
+        return currentUser != null
+
+    }
+    override fun login(email: String, password: String, onResult: (Boolean) -> Unit) {
+         authentication.signInWithEmailAndPassword(email,password).addOnCompleteListener{
+             onResult(it.isComplete && it.isSuccessful)
+         }
+    }
+
+
 }

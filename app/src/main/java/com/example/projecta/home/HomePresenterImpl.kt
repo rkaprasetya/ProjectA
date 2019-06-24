@@ -2,21 +2,18 @@ package com.example.projecta.home
 
 import android.util.Log
 import com.example.projecta.network.ApiNotifClient
-import com.google.firebase.iid.FirebaseInstanceId
 import io.reactivex.Observer
-import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import okhttp3.ResponseBody
-import java.io.IOException
 
 class HomePresenterImpl(var view:HomeContracts.view): HomeContracts.presenter {
 
     lateinit var disposable: Disposable
     override fun sendNotif() {
-
-       startNotifApi(getParams())
+        view.openMapActivity()
+       //startNotifApi(getParams())
     }
     private fun startNotifApi(map: HashMap<String,String>){
         Log.e("err","here")

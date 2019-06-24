@@ -19,7 +19,6 @@ class RegisterPresenterImpl(var view:RegisterContracts.view, var repository: Reg
     }
 
     override fun validateFields() {
-        var registerResult = false
         result = true
         val fullname = view.getFullName()
         val phoneNumber = view.getPhoneNumber()
@@ -37,22 +36,25 @@ class RegisterPresenterImpl(var view:RegisterContracts.view, var repository: Reg
 
         isPasswordValid()
         if(result){
-//            authentication.register(email,password,fullname,phoneNumber) { isSuccessful ->
-//                onRegisterResult(isSuccessful,fullname,phoneNumber,email,password)
-//            }
-             repository.registerUser(fullname,phoneNumber,email,password)
+            authentication.register(email,password,fullname,phoneNumber) { isSuccessful ->
+                onRegisterResult(isSuccessful,fullname,phoneNumber,email,password)
+            }
+//             repository.registerUser(fullname,phoneNumber,email,password)
 
         }else{
-            view.showToast("Form belum terisi dengan benar")
+            view.showToast("Form is not filled correctly")
         }
 
 
     }
     fun onRegisterResult(userResult: Boolean,fullname: String, phoneNumber: String, email: String, password: String) {
         if(userResult){
-            repository.createUser(fullname,phoneNumber,email,password)
+            if(repository.createUser(fullname,phoneNumber,email,password)){
+                view.showToast("Register is successfull")
+                view.backToLogin()
+            }
         }else{
-            view.showToast("Email telah terdaftar")
+            view.showToast("Email is registered. Please use another email")
         }
 
     }

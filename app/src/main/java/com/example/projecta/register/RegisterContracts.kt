@@ -16,6 +16,7 @@ interface RegisterContracts {
         fun getRetypePassword():String
         fun unsetPasswordError()
         fun unsetRetypeError()
+        fun backToLogin()
 
     }
     interface presenter{
@@ -26,7 +27,7 @@ interface RegisterContracts {
     }
     interface repository{
         fun registerUser(fullname : String, phoneNumber: String, email: String, password:String)
-        fun createUser(fullname: String, phoneNumber: String, email: String, password: String)
+        fun createUser(fullname: String, phoneNumber: String, email: String, password: String):Boolean
 
     }
 }

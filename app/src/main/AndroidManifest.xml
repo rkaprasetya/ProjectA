@@ -60,7 +60,8 @@
         </activity>
         <activity android:name=".circle.CircleActivity">
         </activity>
-        <activity android:name=".register.RegisterActivity">
+        <activity android:name=".register.RegisterActivity"
+                  android:windowSoftInputMode="adjustResize">
 
         </activity>
         <activity android:name=".home.HomeActivity">

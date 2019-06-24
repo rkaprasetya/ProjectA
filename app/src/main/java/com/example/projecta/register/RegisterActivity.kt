@@ -9,6 +9,8 @@ import com.example.projecta.utilities.onTextChanged
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity(), RegisterContracts.view, View.OnClickListener {
+
+
     private var repository = RegisterRepositoryImpl()
     private var presenter : RegisterPresenterImpl = RegisterPresenterImpl(this,repository)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,11 +24,13 @@ class RegisterActivity : AppCompatActivity(), RegisterContracts.view, View.OnCli
         et_email.onTextChanged { presenter.isEmailValid() }
         et_register_password.onTextChanged { presenter.isPasswordValid() }
         et_register_retype.onTextChanged { presenter.isPasswordValid() }
+        btn_register_back.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.btn_register->presenter.validateFields()
+            R.id.btn_register_back->backToLogin()
         }
     }
     override fun showToast(message:String) {
@@ -80,5 +84,7 @@ class RegisterActivity : AppCompatActivity(), RegisterContracts.view, View.OnCli
         et_register_retype.error = null
     }
 
-
+    override fun backToLogin() {
+        finish()
+    }
 }

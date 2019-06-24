@@ -6,9 +6,11 @@ interface HomeContracts {
     interface presenter{
         fun sendNotif()
 
+
     }
     interface view: BaseContracts.view{
         fun startNotifThread()
+        fun openMapActivity()
     }
     interface repository{
 
