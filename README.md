@@ -13,6 +13,7 @@ Currently, this application is in prototype phase.
 
 #CurrentDevelopment(24/6/2019)
   - Implement sign in and sign out session and integrate it with Firebase
+  - Create emergency data and push it to the database
 #PreviousDevelopment (14/6/2019)
   - integrate registration to Firebase realtime database
 
