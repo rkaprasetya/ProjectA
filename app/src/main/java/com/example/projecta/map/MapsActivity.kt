@@ -32,7 +32,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, MapsContract.view 
     protected var lastLocation: Location? = null
     private var latitudeLabel: Any? = null
     private var longitudeLabel: Any? = null
-    private var presenter: MapsPresenterImpl? = MapsPresenterImpl(this)
+    private var repository : MapsRepositoryImpl = MapsRepositoryImpl()
+    private var presenter: MapsPresenterImpl? = MapsPresenterImpl(this,repository)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
@@ -75,6 +77,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, MapsContract.view 
                 )
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, zoomLevel))
                 mMap.setInfoWindowAdapter(PopupAdapter(layoutInflater))
+                presenter!!.createEmergency(currentLocation)
             } else {
                 Toast.makeText(this, "No location detected", Toast.LENGTH_SHORT).show()
             }

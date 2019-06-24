@@ -6,9 +6,16 @@ import android.util.Log
 import android.view.View
 import androidx.core.app.ActivityCompat
 import com.example.projecta.R
+import com.example.projecta.firebase.authentication.FirebaseAuthenticationManager
+import com.example.projecta.firebase.database.FirebaseDatabaseManager
+import com.google.android.gms.maps.model.LatLng
 
-class MapsPresenterImpl(var view:MapsContract.view?):MapsContract.presenter {
+class MapsPresenterImpl(var view:MapsContract.view?, val repository :MapsContract.repository):MapsContract.presenter {
+    override fun createEmergency(location: LatLng) {
 
+        repository.addEmergency(location)
+        Log.e("emergency","${repository.emergencyResult}")
+    }
     override fun setMap() {
         if(!checkPermissions()){
             requestPermissions()
