@@ -6,38 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".circle.CircleActivity">
-    <RelativeLayout android:id="@+id/rl_circle_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:elevation="2dp"
-                    android:background="@color/background"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-        <TextView android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="10dp"
-                  android:layout_marginStart="20dp"
-                  android:layout_marginBottom="10dp"
-                  android:text="@string/circle"
-                  android:textColor="@color/blue"
-                  android:textSize="@dimen/page_title_textsize"/>
 
-    </RelativeLayout>
-    <TextView
-            android:text="@string/circle_list_friend"
-            android:layout_width="wrap_content"
-            android:textSize="15sp"
-            android:textColor="@color/black"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:layout_marginBottom="252dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="170dp"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="17dp" app:layout_constraintHorizontal_bias="0.185"
-            android:layout_marginTop="90dp" app:layout_constraintTop_toBottomOf="@+id/rl_circle_title"/>
     <LinearLayout android:layout_width="0dp"
                   android:layout_height="50dp"
                   android:orientation="horizontal"
@@ -111,14 +80,33 @@
             />
         </LinearLayout>
     </LinearLayout>
-    <TextView
-            android:text="@string/member_circle_list"
-            android:textSize="15sp"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2" android:layout_marginBottom="252dp"
-            app:layout_constraintBottom_toTopOf="@+id/ll_menu_circle" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="64dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="17dp" app:layout_constraintHorizontal_bias="0.123"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:tabSelectedTextColor="@color/blue"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            android:id="@+id/tabLayout" app:layout_constraintBottom_toTopOf="@+id/viewPager"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/your_circle"/>
+
+        <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/part_of"/>
+
+
+    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/ll_menu_circle"
+            android:id="@+id/viewPager"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

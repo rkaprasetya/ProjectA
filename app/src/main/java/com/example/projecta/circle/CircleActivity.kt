@@ -2,10 +2,13 @@ package com.example.projecta.circle
 
 import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projecta.R
+import com.example.projecta.circle.circlelist.FriendFragment
+import com.example.projecta.circle.circlelist.MyCircleFragment
 import com.example.projecta.home.HomeActivity
 import com.example.projecta.profile.ProfileActivity
 import com.example.projecta.settings.SettingsActivity
@@ -18,7 +21,9 @@ class CircleActivity : AppCompatActivity(), CircleContracts.view,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_circle)
+        viewPager.adapter = CircleAdapter(supportFragmentManager)
         initButtons()
+        setStatePageAdapter()
     }
 
     private fun initButtons() {
@@ -35,6 +40,16 @@ class CircleActivity : AppCompatActivity(), CircleContracts.view,
             R.id.tv_logout_no -> dialog.dismiss()
             R.id.btn_circle_settings -> openSettingsActivity()
         }
+    }
+
+    private fun setStatePageAdapter(){
+        val adapter = CircleAdapter(supportFragmentManager)
+        adapter.addFragment(MyCircleFragment(), "My Circle")
+        adapter.addFragment(FriendFragment(), "Friend Circle")
+        viewPager.adapter = adapter
+        tabLayout.setupWithViewPager(viewPager)
+        //tabLayout.setTabTextColors(Color.parseColor("#133337"), Color.parseColor("#36a3f7"))
+
     }
 
     private fun openProfileActivity() {

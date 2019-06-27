@@ -11,10 +11,18 @@ import com.example.projecta.firebase.database.FirebaseDatabaseManager
 import com.google.android.gms.maps.model.LatLng
 
 class MapsPresenterImpl(var view:MapsContract.view?, val repository :MapsContract.repository):MapsContract.presenter {
+
+
     override fun createEmergency(location: LatLng) {
 
-        repository.addEmergency(location)
-        Log.e("emergency","${repository.emergencyResult}")
+        repository.addEmergency(location){onResult ->
+            if(onResult){
+                Log.e("true","e=$onResult")
+            }else{
+                Log.e("false","e=$onResult")
+            }
+        }
+
     }
     override fun setMap() {
         if(!checkPermissions()){

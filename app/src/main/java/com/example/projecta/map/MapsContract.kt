@@ -23,7 +23,7 @@ interface MapsContract {
     }
 
     interface repository{
-        fun addEmergency(location:LatLng)
+        fun addEmergency(location:LatLng,onResult: (Boolean) -> Unit)
         var emergencyResult : Boolean
     }
 
