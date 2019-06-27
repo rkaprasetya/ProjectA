@@ -1,6 +1,5 @@
-#ProjectA
-
-Project A an application that help user who is in emergency situation. 
+#AlertMe
+AlertMe is an application that help user who is in emergency situation. 
 With a press of a button, the application will send a distress signal to friends. 
 The signal also includes the information and the current location of the person in distress that integrated with google map.
 Currently, this application is in prototype phase.
@@ -11,7 +10,10 @@ Currently, this application is in prototype phase.
 - Database : Firebase
 - Min SDK Version : Lollipop(21)
 
-#CurrentDevelopment(24/6/2019)
+#CurrentDevelopment(27/6/2019)
+  - Add View pager and tab in the Circle Activity
+
+#PreviousDevelopment(24/6/2019)
   - Implement sign in and sign out session and integrate it with Firebase
   - Create emergency data and push it to the database
 #PreviousDevelopment (14/6/2019)
