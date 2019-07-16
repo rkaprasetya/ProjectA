@@ -2,13 +2,12 @@ package com.example.projecta.circle
 
 import android.app.AlertDialog
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projecta.R
 import com.example.projecta.circle.circlelist.FriendFragment
-import com.example.projecta.circle.circlelist.MyCircleFragment
+import com.example.projecta.circle.circlelist.mycircle.MyCircleFragment
 import com.example.projecta.home.HomeActivity
 import com.example.projecta.profile.ProfileActivity
 import com.example.projecta.settings.SettingsActivity

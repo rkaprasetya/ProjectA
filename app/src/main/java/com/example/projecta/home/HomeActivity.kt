@@ -11,6 +11,7 @@ import com.example.projecta.circle.CircleActivity
 import com.example.projecta.map.MapsActivity
 import com.example.projecta.profile.ProfileActivity
 import com.example.projecta.settings.SettingsActivity
+import com.example.projecta.utilities.CommonUtilities
 import com.google.firebase.FirebaseApp
 import com.google.firebase.iid.FirebaseInstanceId
 import kotlinx.android.synthetic.main.activity_home.*
@@ -39,6 +40,10 @@ class HomeActivity : AppCompatActivity(), HomeContracts.view, View.OnClickListen
             R.id.tv_logout_yes -> dialog.dismiss()
             R.id.btn_profile -> openProfileActivity()
         }
+    }
+    private fun checkInternetConnection(){
+        val result = CommonUtilities().isNetworkConnected(this)
+
     }
 
     private fun initButtons() {

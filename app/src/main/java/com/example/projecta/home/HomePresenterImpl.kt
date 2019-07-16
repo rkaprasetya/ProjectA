@@ -16,7 +16,7 @@ class HomePresenterImpl(var view:HomeContracts.view): HomeContracts.presenter {
        //startNotifApi(getParams())
     }
     private fun startNotifApi(map: HashMap<String,String>){
-        Log.e("err","here")
+
         val call = ApiNotifClient().apiNotifClient.sendNotifRx(token)
         call.subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

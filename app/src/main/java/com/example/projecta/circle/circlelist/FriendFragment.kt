@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.projecta.R
+import com.example.projecta.firebase.authentication.FirebaseAuthenticationManager
+import com.example.projecta.firebase.database.FirebaseDatabaseManager
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
