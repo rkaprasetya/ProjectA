@@ -1,6 +1,8 @@
 package com.example.projecta.home
 
 import android.util.Log
+import com.example.projecta.firebase.authentication.FirebaseAuthenticationManager
+import com.example.projecta.firebase.database.FirebaseDatabaseManager
 import com.example.projecta.network.ApiNotifClient
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -9,7 +11,8 @@ import io.reactivex.schedulers.Schedulers
 import okhttp3.ResponseBody
 
 class HomePresenterImpl(var view:HomeContracts.view): HomeContracts.presenter {
-
+    private val db : FirebaseDatabaseManager = FirebaseDatabaseManager()
+    private val authentication: FirebaseAuthenticationManager = FirebaseAuthenticationManager()
     lateinit var disposable: Disposable
     override fun sendNotif() {
         view.openMapActivity()
@@ -46,6 +49,19 @@ class HomePresenterImpl(var view:HomeContracts.view): HomeContracts.presenter {
         val data = HashMap<String,String>()
         map.put("to",token)
         return map
+    }
+
+
+    override fun getCircle() {
+        val id = authentication.getUserId()
+        db.getCircle(id){
+                user ->
+            if(user == null){
+
+            }else{
+
+            }
+        }
     }
 
     companion object{

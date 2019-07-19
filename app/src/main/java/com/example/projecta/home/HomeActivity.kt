@@ -34,7 +34,7 @@ class HomeActivity : AppCompatActivity(), HomeContracts.view, View.OnClickListen
 
         when (v!!.id) {
             R.id.btn_circle -> openCircleActivity()
-            R.id.btn_help -> presenter.sendNotif()
+            R.id.btn_help -> presenter.getCircle()
             R.id.btn_settings -> openSettingsActivity()
             R.id.tv_logout_no -> dialog.dismiss()
             R.id.tv_logout_yes -> dialog.dismiss()

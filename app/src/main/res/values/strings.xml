@@ -41,4 +41,14 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="input_phone_number">Input phone number</string>
+    <string name="result">Result</string>
+    <string name="dummy_result">Dani/081129273944</string>
+    <string name="button_add">button add</string>
+    <string name="close">Close</string>
+    <string name="mycircle">MyCircle</string>
+    <string name="my_circle">My Circle</string>
+    <string name="no_friends">Your circle has 0 friend. Please add new friends.</string>
+    <string name="add_friend">Add Friend</string>
 </resources>
