@@ -10,9 +10,10 @@ Currently, this application is in prototype phase.
 - Database : Firebase
 - Min SDK Version : Lollipop(21)
 
-#CurrentDevelopment(16/7/2019)
+#CurrentDevelopment(19/7/2019)
   - Implement get user's circle from database
   - Create popup to create new circle
+  - Create add new friend layout
 
 #PreviousDevelopment(27/6/2019)
   - Add View pager and tab in the Circle Activity
