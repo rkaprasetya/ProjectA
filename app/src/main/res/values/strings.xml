@@ -49,6 +49,8 @@
     <string name="close">Close</string>
     <string name="mycircle">MyCircle</string>
     <string name="my_circle">My Circle</string>
-    <string name="no_friends">Your circle has 0 friend. Please add new friends.</string>
+    <string name="no_friends">Your circle has 0 friend. Please add new friends as destination for your distress
+        signal.
+    </string>
     <string name="add_friend">Add Friend</string>
 </resources>

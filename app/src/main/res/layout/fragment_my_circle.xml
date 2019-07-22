@@ -12,11 +12,12 @@
         <TextView
                 android:text="@string/no_friends"
                 android:layout_width="wrap_content"
+                android:gravity="center"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_circle_no_friends"
-                android:layout_marginTop="182dp"
+                android:layout_marginTop="188dp"
                 app:layout_constraintTop_toBottomOf="@+id/tv_circle_title" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="43dp"/>
+        />
         <TextView
                 android:text="@string/my_circle"
                 android:textColor="@color/blue"
