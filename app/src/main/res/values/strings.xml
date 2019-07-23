@@ -53,4 +53,8 @@
         signal.
     </string>
     <string name="add_friend">Add Friend</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="confirmation_add_friend">Are you sure you want to add this person?</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
 </resources>
